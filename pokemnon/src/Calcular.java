@@ -4,8 +4,8 @@ public class Calcular {
     private Lutar lutar;
     
 
-    public Calcular (Lutar lutar){
-        this.lutar = lutar;
+    public Calcular (){
+
     }
     
     
@@ -14,10 +14,13 @@ public class Calcular {
 
     public double calcular(Pokemon pokemon){
 
-        System.out.println("Qual pokeboll q usar\n==1 POKÉ BALL \n==2 GREAT BALL \n==3 ULTRA BALL\n==4 MASTER BALL");
+        System.out.println("Qual pokeboll q usar\n==1 POKÉ BALL \n==2 GREAT BALL \n==3 ULTRA BALL\n==4 MASTER BALL\n==5 DESEJA SAIR?");
         int op = sc.nextInt();
         double chance = 0.0;
-        double hpRatio = (double) (pokemon.getHpmax() - pokemon.getHpAtual()) / pokemon.getHpmax();
+        double hpRatio = (double) (pokemon.getStatus().getHp() - pokemon.getStatus().getHp()) / pokemon.getStatus().getHp();
+        if (hpRatio == 0.0) {
+            hpRatio = 0.01;
+        }
         switch (op) {
             case 1:
                 chance = hpRatio * 1.0;
@@ -32,12 +35,14 @@ public class Calcular {
                 chance = 999.0;
             break;
             default:
-            System.out.println("Opçao invalida, pokebola normal foi lançanda");
-                chance = hpRatio * 1.0;
+            System.out.println("SAIU");
+            chance = 0;
             break;
         }
-    return chance;       
-    
+    return chance;
+
+
+
     
 }
 

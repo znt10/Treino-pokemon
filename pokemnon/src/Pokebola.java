@@ -1,19 +1,23 @@
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class Pokebola {
 
 
-
+Scanner sc = new Scanner(System.in);
 
    
 
 public void Cap(Treinador t,Pokemon p,Calcular calcular){
 
     Random random = new Random();
-           
+
             double chanceCaptura = calcular.calcular(p);
-            
+
+            if(chanceCaptura == 0){
+                return;
+            }
             double numeroAleatorio = random.nextDouble();
             
             
@@ -33,5 +37,8 @@ public void Cap(Treinador t,Pokemon p,Calcular calcular){
                 System.out.println("pokebola foi lancada");
                 t.adicinarPokemonTreinador(p);
                 System.out.println("\nPokemon "+ p.getNome() + "\nfoi capturado com sucesso");}
+
+
+
             
 }}

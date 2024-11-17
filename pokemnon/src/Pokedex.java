@@ -3,11 +3,11 @@
 import java.util.ArrayList;
 public class Pokedex {
 
-    private String eloluçao;
+    private ArrayList<String> evolucoes = new ArrayList<>();
     private Treinador treinador;
     ArrayList<Pokemon> pokemons = new ArrayList<>();
     ArrayList<Pokemon> inicial =  new ArrayList<>();
-
+    ArrayList<Pokemon> derrotados =  new ArrayList<>();
 
     public void adicinarPokemon(Pokemon pokemon){
         pokemons.add(pokemon);
@@ -33,8 +33,17 @@ public class Pokedex {
             System.out.println(p);
         }
     }
+    public void addDerrotado(Pokemon derrotado){
+        derrotados.add(derrotado);
+    }
 
+    public ArrayList<Pokemon> getDerrotados() {
+        return derrotados;
+    }
 
+    public void setDerrotados(ArrayList<Pokemon> derrotados) {
+        this.derrotados = derrotados;
+    }
 
     public void exibirPokemon(){
         for(Pokemon p:pokemons){
@@ -43,12 +52,20 @@ public class Pokedex {
 
 
     }
-    public String getEloluçao() {
-        return eloluçao;
+    public void addEvoluco(String evoluco) {
+        evolucoes.add(evoluco);
+    }
+    public void mostrarEvoluco(){
+        for(String evoluco:evolucoes){
+            System.out.println(evoluco);
+        }
+    }
+    public ArrayList<String> getEvolucoes() {
+        return evolucoes;
     }
 
-    public void setEloluçao(String eloluçao) {
-        this.eloluçao = eloluçao;
+    public void setEvolucoes(ArrayList<String> evolucoes) {
+        this.evolucoes = evolucoes;
     }
 
    
