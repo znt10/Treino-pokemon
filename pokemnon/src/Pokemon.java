@@ -43,6 +43,7 @@ public class Pokemon {
     Natureza quirky = new Natureza("Quirky", "Nenhum", "Nenhum");
     Treinador t1 = new Treinador("jose", 5);
 
+
     public void puxar(){
     t1.addNatureza(lonely);
     t1.addNatureza(brave);
